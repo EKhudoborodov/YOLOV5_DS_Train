@@ -1,0 +1,7 @@
+names:
+- Eye
+- Mouth
+- Nose
+nc: 3
+train: Biometry-2/train/images
+val: Biometry-2/valid/images
