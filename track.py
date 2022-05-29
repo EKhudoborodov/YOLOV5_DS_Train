@@ -293,12 +293,12 @@ def tracking(video):
     with torch.no_grad():
         detect(opt)
 
-"""        
+        
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--yolo_model', nargs='+', type=str, default='best_3.pt', help='model.pt path(s)')
     parser.add_argument('--deep_sort_model', type=str, default='osnet_x0_25')
-    parser.add_argument('--source', type=str, default=f"{video}", help='source')  # file/folder, 0 for webcam
+    parser.add_argument('--source', type=str, default=f"videos/VvID.mp4", help='source')  # file/folder, 0 for webcam
     parser.add_argument('--output', type=str, default='inference/output', help='output folder')  # output folder
     parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[480], help='inference size h,w')
     parser.add_argument('--conf-thres', type=float, default=0.5, help='object confidence threshold')
@@ -328,4 +328,4 @@ if __name__ == '__main__':
 
     with torch.no_grad():
         detect(opt)
-"""
+

@@ -1,6 +1,8 @@
 import requests
 from flask import Flask, render_template, request
 import track
+from pathlib import Path
+import tempfile
 #import psycopg2
 
 app = Flask(__name__)
@@ -19,7 +21,9 @@ def index():
 @app.route('/result', methods=['POST'])
 def login():
     #if request.method == 'POST':
-    video = request.form.get('file')
+    video = request.files['file']
+    video.save("/home/scripter/testing-2/YOLOV5_DS_Train/videos/VvID.mp4")
+    track.tracking(video)
     return render_template('result.html')
     #return render_template('result.html', video = track.tracking(f))
 #        cursor.execute(f"SELECT * FROM service.users WHERE login='{username}' AND password='{password}'", (str(username), str(password)))
